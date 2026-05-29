@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Dados Pessoais</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Courier New, monospace;
+}
+
+body{
+    background:#efefef;
+    zoom:90%;
+}
+
+.top-system{
+    width:100%;
+    background:#e5e5e5;
+    border-bottom:2px solid #bdbdbd;
+    padding:6px 0;
+}
+
+.top-container{
+    width:1100px;
+    margin:auto;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.top-links{
+    display:flex;
+    gap:20px;
+    font-size:12px;
+}
+
+.top-links a{
+    text-decoration:none;
+    color:#333;
+}
+
+.top-right{
+    display:flex;
+    align-items:center;
+    gap:5px;
+}
+
+.header{
+    width:1100px;
+    margin:15px auto 10px auto;
+    display:flex;
+    justify-content:space-between;
+}
+
+.logo-text h3{
+    color:red;
+    font-size:14px;
+}
+
+.logo-text h1{
+    font-size:16px;
+}
+
+.logo-right{
+    text-align:right;
+    font-size:8px;
+}
+
+.black-line{
+    width:1100px;
+    height:3px;
+    background:black;
+    margin:auto;
+}
+
+.screen{
+    width:1100px;
+    margin:auto;
+    min-height:700px;
+    padding-top:10px;
+}
+
+.system-top{
+    display:flex;
+    justify-content:space-between;
+    padding:0 80px;
+    font-size:14px;
+    line-height:20px;
+}
+
+.dados-pessoais{
+    margin-top:10px;
+    margin-left:90px;
+    font-size:16px;
+}
+
+.dados-pessoais pre{
+    font-family:Courier New, monospace;
+    white-space:pre;
+    line-height:1.1;
+    font-size:16px;
+}
+
+.footer-text{
+    margin-top:25px;
+    text-align:center;
+    font-size:16px;
+}
+
+.buttons{
+    margin-top:25px;
+    width:100%;
+    display:flex;
+    justify-content:center;
+    gap:60px;
+}
+
+.buttons button{
+    min-width:140px;
+    height:32px;
+    border:2px solid black;
+    background:#9db4e0;
+    font-size:14px;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="top-system">
+
+    <div class="top-container">
+
+        <div class="top-links">
+            <a href="#">Portal do Governo</a>
+            <a href="#">Cidadão.SP</a>
+            <a href="#">Investimentos.SP</a>
+        </div>
+
+        <div class="top-right">
+            <select>
+                <option>Destaques:</option>
+            </select>
+
+            <button>OK</button>
+        </div>
+
+    </div>
+
+</div>
+
+<div class="header">
+
+    <div class="logo-text">
+        <h3>Governo do Estado de São Paulo</h3>
+        <h1>Secretaria da Educação</h1>
+    </div>
+
+    <div class="logo-right">
+        GOVERNO DO ESTADO DE SÃO PAULO
+        <br>
+        Secretaria da Educação
+    </div>
+
+</div>
+
+<div class="black-line"></div>
+
+<div class="screen">
+
+    <div class="system-top">
+
+        <div>
+            MPAEF0A
+            <br>
+            01.1.1
+        </div>
+
+        <div>
+            SECR EDUCACAO - CADASTRO FUNCIONAL
+            <br>
+            INCLUSAO DE FUNCIONARIO/SERVIDOR - DADOS PESSOAIS
+        </div>
+
+        <div style="text-align:right;">
+            DATA 28/05/26
+            <br>
+            HORA 14:23:31
+        </div>
+
+    </div>
+
+    <div class="dados-pessoais">
+
+<pre>
+RG: <span id="rg"></span>     U.F.: SP
+
+NOME: <span id="nome"></span>                 C.P.F.: <span id="cpf"></span>
+NOME SOCIAL:
+
+SEXO: <span id="sexo"></span>  (F,M) DT. NASC.: <span id="nasc"></span>
+
+ESTADO CIVIL:  <span id="estadoCivil">    </span> (C,S,V,D=DESQ,R=DIV,E=UNIAO EST,H=UNIAO EST H OMOAF,A=SEP JUD)
+
+NATURALIDADE(U.F.): <span id="naturalidade"></span>   NACIONALIDADE: <span id="nacionalidade"></span>     INGR. SERV. PUBL.: <span id="dtIngresso"></span>
+
+ESCOLARIDADE-   GRAU:  <span id="escolaridade">    </span> (1=FUNDAN.,2=MEDIO,3=SUPERIOR) SIT.: C (C=COMP,I=INCOMP)
+
+ESTRANGEIRO- DATA OPCAO:           ANO DE CHEGADA NO BRASIL:
+
+DADOS PARA PIS/PASEP:-
+NUM.: <span id="pis"></span>      NOME DA MAE: <span id="mae"></span>
+ANO DO 1. EMPREGO: <span id="anoEmprego"></span>
+</pre>
+
+</div>
+
+    <div class="footer-text">
+
+        TECLE ENTER PARA CONTINUAR, CLEAR PARA RETORNAR OU PF12 PARA TERMINAR
+
+    </div>
+
+    <div class="buttons">
+
+        <button onclick="continuarProximaTela()">
+    Continuar
+</button>
+
+        <button onclick="window.location.href='tela-inicial.html'">
+            Menu Principal
+        </button>
+
+        <button>
+            Retornar (Clear)
+        </button>
+
+        <button>
+            Voltar (F8)
+        </button>
+
+        <button onclick="window.location.href='index.html'">
+            Encerrar
+        </button>
+
+    </div>
+
+</div>
+
+<script>
+
+const dados = JSON.parse(localStorage.getItem("dadosServidor"));
+const rg = localStorage.getItem("rgSelecionado");
+
+document.getElementById("rg").innerText = rg;
+document.getElementById("nome").innerText = dados.nome;
+document.getElementById("cpf").innerText = dados.cpf;
+document.getElementById("estadoCivil").innerText = dados.estadoCivil;
+document.getElementById("naturalidade").innerText = dados.naturalidade;
+document.getElementById("nacionalidade").innerText = dados.nacionalidade;
+document.getElementById("escolaridade").innerText = dados.escolaridade;
+document.getElementById("pis").innerText = dados.pis;
+document.getElementById("mae").innerText = dados.mae;
+document.getElementById("anoEmprego").innerText = dados.anoEmprego;
+document.getElementById("sexo").innerText = dados.sexo;
+document.getElementById("nasc").innerText = dados.nasc;
+document.getElementById("dtIngresso").innerText = dados.dtIngresso;
+document.getElementById("pis").innerText = dados.pis;
+document.getElementById("mae").innerText = dados.mae;
+
+function continuarProximaTela(){
+
+    window.location.href = "dados-complementares.html";
+
+}
+
+document.addEventListener("keydown", function(e){
+
+    if(e.key === "Enter"){
+
+        continuarProximaTela();
+
+    }
+
+});
+
+</script>
+
+</body>
+</html>

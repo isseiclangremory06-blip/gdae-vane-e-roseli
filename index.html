@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Secretaria Escolar Digital</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+    background:#ececec;
+}
+
+/* TOPO COLORIDO */
+
+.top-menu{
+    width:100%;
+    display:flex;
+}
+
+.top-menu div{
+    flex:1;
+    text-align:center;
+    padding:14px;
+    font-size:15px;
+    color:white;
+}
+
+.top1{
+    background:#d4a000;
+    color:black !important;
+}
+
+.top2{
+    background:#4d97cf;
+}
+
+.top3{
+    background:#ff8420;
+}
+
+/* CONTAINER */
+
+.container{
+    width:1250px;
+    margin:auto;
+}
+
+/* BARRA GOVERNO */
+
+.gov-bar{
+    width:100%;
+    background:#efefef;
+    border-bottom:2px solid #bdbdbd;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:8px 15px;
+}
+
+.gov-links{
+    display:flex;
+    gap:25px;
+}
+
+.gov-links a{
+    text-decoration:none;
+    color:#444;
+    font-size:14px;
+}
+
+.gov-right{
+    display:flex;
+    gap:5px;
+}
+
+.gov-right select{
+    padding:3px;
+}
+
+.gov-right button{
+    padding:3px 8px;
+}
+
+/* HEADER */
+
+.header{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+    padding:40px 10px 25px;
+}
+
+.logo h2{
+    color:#8e8e8e;
+    font-size:20px;
+    margin-bottom:5px;
+}
+
+.logo h1{
+    color:#4d97cf;
+    font-size:45px;
+    font-weight:bold;
+}
+
+.menu{
+    display:flex;
+    flex-wrap:wrap;
+    gap:35px;
+    max-width:650px;
+    margin-top:10px;
+}
+
+.menu a{
+    text-decoration:none;
+    color:#111;
+    font-size:14px;
+    font-weight:bold;
+}
+
+.menu .red{
+    color:red;
+}
+
+/* LOGIN */
+
+.login-area{
+    width:100%;
+    min-height:470px;
+    background:black;
+    display:flex;
+    justify-content:space-between;
+    padding:50px;
+}
+
+.left h1{
+    color:white;
+    font-size:58px;
+}
+
+.aviso-teste{
+    margin-top:35px;
+    border:3px solid #ffd400;
+    border-radius:15px;
+    padding:20px;
+    width:460px;
+    background:#111;
+    box-shadow:0 0 15px rgba(255,212,0,0.3);
+}
+
+.aviso-teste h3{
+    color:#ffd400;
+    font-size:20px;
+    margin-bottom:10px;
+}
+
+.aviso-teste p{
+    color:white;
+    font-size:18px;
+    line-height:30px;
+}
+
+.aviso-teste span{
+    color:#ffd400;
+    font-weight:bold;
+    font-size:22px;
+}
+
+
+.form{
+    width:470px;
+}
+
+.form label{
+    display:block;
+    color:white;
+    margin-top:20px;
+    margin-bottom:10px;
+    font-size:14px;
+    font-weight:bold;
+}
+
+.form select,
+.form input{
+    width:100%;
+    padding:16px;
+    border:none;
+    outline:none;
+    background:#f2f2f2;
+    font-size:16px;
+}
+
+.btn{
+    margin-top:30px;
+    background:#ff4f4f;
+    color:white;
+    border:none;
+    padding:14px 34px;
+    font-size:22px;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+.erro{
+    color:red;
+    margin-top:20px;
+    font-weight:bold;
+}
+
+/* INFO */
+
+.info{
+    margin-top:40px;
+}
+
+.info h2{
+    font-size:28px;
+    margin-bottom:20px;
+}
+
+.line{
+    width:100%;
+    height:1px;
+    background:#cfcfcf;
+    margin-bottom:30px;
+}
+
+.info p{
+    font-size:18px;
+    line-height:30px;
+}
+
+.info a{
+    color:blue;
+    font-weight:bold;
+}
+
+/* SERVIÇOS */
+
+.services{
+    margin-top:60px;
+    width:100%;
+}
+
+.services h2{
+    color:black;
+    margin-bottom:20px;
+    font-size:28px;
+}
+
+.cards{
+    display:flex;
+    gap:20px;
+    flex-wrap:wrap;
+}
+
+.card{
+    background:white;
+    width:280px;
+    padding:25px;
+    border-radius:5px;
+    box-shadow:0 0 10px rgba(0,0,0,0.1);
+}
+
+.card h3{
+    margin-bottom:15px;
+    color:#4d97cf;
+}
+
+.card p{
+    line-height:25px;
+    color:#555;
+}
+
+/* RESPONSIVO */
+
+@media(max-width:1200px){
+
+    .container{
+        width:95%;
+    }
+
+    .header{
+        flex-direction:column;
+        gap:30px;
+    }
+
+    .login-area{
+        flex-direction:column;
+        gap:50px;
+    }
+
+    .left h1{
+        font-size:42px;
+    }
+
+    .form{
+        width:100%;
+    }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- TOPO -->
+
+<div class="top-menu">
+
+    <div class="top1">
+        Portal da Educação
+    </div>
+
+    <div class="top2">
+        Secretaria Escolar Digital
+    </div>
+
+    <div class="top3">
+        Intranet Espaço do Servidor
+    </div>
+
+</div>
+
+<!-- CONTAINER -->
+
+<div class="container">
+
+    <!-- BARRA GOVERNO -->
+
+    <div class="gov-bar">
+
+        <div class="gov-links">
+
+            <a href="#">
+                Portal do Governo
+            </a>
+
+            <a href="#">
+                Cidadão.SP
+            </a>
+
+            <a href="#">
+                Investimentos.SP
+            </a>
+
+        </div>
+
+        <div class="gov-right">
+
+            <select>
+                <option>
+                    Destaques:
+                </option>
+            </select>
+
+            <button>
+                OK
+            </button>
+
+        </div>
+
+    </div>
+
+    <!-- HEADER -->
+
+    <div class="header">
+
+        <div class="logo">
+
+            <h2>
+                SECRETARIA DA EDUCAÇÃO DO ESTADO DE SÃO PAULO
+            </h2>
+
+            <h1>
+                Secretaria Escolar Digital
+            </h1>
+
+        </div>
+
+        <div class="menu">
+
+            <a href="#">
+                SOBRE A SECRETARIA
+            </a>
+
+            <a href="#">
+                BOLETIM ESCOLAR
+            </a>
+
+            <a href="#">
+                CONCLUINTES - CONSULTA PÚBLICA
+            </a>
+
+            <a href="#" class="red">
+                PORTAL DE ATENDIMENTO
+            </a>
+
+            <a href="#">
+                SAIBA COMO ACESSAR
+            </a>
+
+        </div>
+
+    </div>
+
+    <!-- LOGIN -->
+
+    <div class="login-area">
+
+        <div class="left">
+
+    <h1>
+        Bem-vindo ao GDAENET
+    </h1>
+
+    <div class="aviso-teste">
+
+        <h3>
+            AMBIENTE DE TESTE PARA OT
+        </h3>
+
+        <p>
+            Válido apenas entre os dias
+            <br>
+
+            <span>
+                08/06/2026 a 12/06/2026
+            </span>
+        </p>
+
+    </div>
+
+</div>
+
+
+        <div class="form">
+
+            <label>
+                SELECIONE O SISTEMA
+            </label>
+
+            <select>
+
+                <option>
+                    Cadastro Funcional
+                </option>
+
+                <option>
+                    Cadastro de Alunos
+                </option>
+
+                <option>
+                    Controle de Frequência
+                </option>
+
+                <option>
+                    Desp de Pessoal (SDPE)
+                </option>
+
+                <option>
+                    Cargos
+                </option>
+
+                <option>
+                    Contagem de Tempo
+                </option>
+
+                <option>
+                    Formação Curricular
+                </option>
+
+                <option>
+                    Gratificação / Promoção QM
+                </option>
+
+            </select>
+
+            <label>
+                OPERADOR
+            </label>
+
+            <input
+                type="text"
+                id="operador"
+                placeholder="Digite nome e sobrenome"
+            >
+
+            <label>
+                SENHA
+            </label>
+
+            <input
+                type="password"
+                id="senha"
+                placeholder="Digite sua senha"
+            >
+
+            <button class="btn" onclick="login()">
+                ACESSAR
+            </button>
+
+            <div class="erro" id="erro"></div>
+
+        </div>
+
+    </div>
+
+    <!-- INFORMAÇÕES -->
+
+    <div class="info">
+
+        <h2>
+            Informações
+        </h2>
+
+        <div class="line"></div>
+
+        <p>
+
+            Os sistemas do portalnet migraram para o endereço:
+
+            <a href="#">
+                http://portalnet.educacao.sp.gov.br/
+            </a>
+
+        </p>
+
+    </div>
+
+    <!-- SERVIÇOS -->
+
+    <div class="services">
+
+        <h2>
+            Serviços
+        </h2>
+
+        <div class="line"></div>
+
+        <div class="cards">
+
+            <div class="card">
+
+                <h3>
+                    Cadastro Funcional
+                </h3>
+
+                <p>
+                    Administração de servidores e registros funcionais.
+                </p>
+
+            </div>
+
+            <div class="card">
+
+                <h3>
+                    Cadastro de Alunos
+                </h3>
+
+                <p>
+                    Consulta e gerenciamento de matrículas escolares.
+                </p>
+
+            </div>
+
+            <div class="card">
+
+                <h3>
+                    Controle de Frequência
+                </h3>
+
+                <p>
+                    Registro de presença e frequência escolar.
+                </p>
+
+            </div>
+
+            <div class="card">
+
+                <h3>
+                    Boletim Escolar
+                </h3>
+
+                <p>
+                    Consulta de notas, faltas e desempenho.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script>
+
+function login(){
+
+    let operador =
+    document.getElementById("operador").value.trim();
+
+    let senha =
+    document.getElementById("senha").value.trim();
+
+    let erro =
+    document.getElementById("erro");
+
+    // LOGIN CORRETO
+    if(
+        operador.toLowerCase() === "ot lindoia"
+        &&
+        senha === "123456789"
+    ){
+
+        window.location.href =
+        "tela-inicial.html";
+
+    }else{
+
+        erro.innerHTML =
+        "Usuário ou senha inválidos.";
+
+    }
+
+}
+
+</script>
+
+</body>
+</html>

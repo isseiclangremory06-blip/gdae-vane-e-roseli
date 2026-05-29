@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Duplicidades Encontradas</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Courier New, monospace;
+}
+
+body{
+    background:#efefef;
+    zoom:90%;
+}
+
+/* TOPO */
+
+.top-system{
+    width:100%;
+    background:#e5e5e5;
+    border-bottom:2px solid #bdbdbd;
+    padding:6px 0;
+}
+
+.top-container{
+    width:1100px;
+    margin:auto;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.top-links{
+    display:flex;
+    gap:20px;
+    font-size:12px;
+}
+
+.top-links a{
+    text-decoration:none;
+    color:#333;
+}
+
+.top-right{
+    display:flex;
+    align-items:center;
+    gap:5px;
+}
+
+.top-right select{
+    height:20px;
+}
+
+.top-right button{
+    height:20px;
+    padding:0 6px;
+}
+
+/* HEADER */
+
+.header{
+    width:1100px;
+    margin:15px auto 10px auto;
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+}
+
+.logo-text h3{
+    color:red;
+    font-size:14px;
+}
+
+.logo-text h1{
+    font-size:16px;
+    font-weight:bold;
+}
+
+.logo-right{
+    text-align:right;
+    font-size:8px;
+}
+
+/* LINHA */
+
+.black-line{
+    width:1100px;
+    height:3px;
+    background:black;
+    margin:auto;
+}
+
+/* CONTEÚDO */
+
+.screen{
+    width:1100px;
+    margin:auto;
+    min-height:520px;
+    position:relative;
+    padding-top:10px;
+}
+
+/* TOPO SISTEMA */
+
+.system-top{
+    display:flex;
+    justify-content:space-between;
+    padding:0 80px;
+    font-size:14px;
+}
+
+.system-top-left{
+    line-height:18px;
+}
+
+.system-top-center{
+    text-align:center;
+    line-height:18px;
+}
+
+.system-top-right{
+    text-align:right;
+    line-height:18px;
+}
+
+/* DADOS */
+
+.rg-line{
+    margin-top:10px;
+    margin-left:90px;
+    font-size:16px;
+}
+
+.table-area{
+    margin-top:25px;
+    margin-left:70px;
+    font-size:16px;
+    line-height:28px;
+}
+
+.seq-input{
+    margin-top:150px;
+    text-align:center;
+    font-size:18px;
+}
+
+.seq-input input{
+    width:50px;
+    height:24px;
+    border:1px solid black;
+    background:white;
+    outline:none;
+    font-size:16px;
+    font-family:Courier New, monospace;
+    text-align:center;
+}
+
+/* TEXTO */
+
+.footer-text{
+    position:absolute;
+    bottom:95px;
+    width:100%;
+    text-align:center;
+    font-size:16px;
+}
+
+/* BOTÕES */
+
+.buttons{
+    position:absolute;
+    bottom:50px;
+    width:100%;
+    display:flex;
+    justify-content:center;
+    gap:60px;
+}
+
+.buttons button{
+    min-width:140px;
+    height:32px;
+    border:2px solid black;
+    background:#9db4e0;
+    font-size:14px;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+.buttons button:hover{
+    background:#7f9ad1;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- TOPO -->
+
+<div class="top-system">
+
+    <div class="top-container">
+
+        <div class="top-links">
+
+            <a href="#">Portal do Governo</a>
+            <a href="#">Cidadão.SP</a>
+            <a href="#">Investimentos.SP</a>
+
+        </div>
+
+        <div class="top-right">
+
+            <select>
+                <option>Destaques:</option>
+            </select>
+
+            <button>OK</button>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- HEADER -->
+
+<div class="header">
+
+    <div class="logo-text">
+
+        <h3>Governo do Estado de São Paulo</h3>
+        <h1>Secretaria da Educação</h1>
+
+    </div>
+
+    <div class="logo-right">
+
+        GOVERNO DO ESTADO DE SÃO PAULO
+        <br>
+        Secretaria da Educação
+
+    </div>
+
+</div>
+
+<!-- LINHA -->
+
+<div class="black-line"></div>
+
+<!-- TELA -->
+
+<div class="screen">
+
+    <!-- TOPO -->
+
+    <div class="system-top">
+
+        <div class="system-top-left">
+
+            MPAEF1A
+            <br>
+            01.1.1
+
+        </div>
+
+        <div class="system-top-center">
+
+            SECR EDUCACAO - CADASTRO FUNCIONAL
+            <br>
+            INCLUSAO DE FUNCIONARIO/SERVIDOR
+            <br>
+            DUPLICIDADE(S) ENCONTRADAS(S)
+
+        </div>
+
+        <div class="system-top-right">
+
+            Tempo: 29:54 min
+            <br>
+            28/05/26
+            <br>
+            14:22:44
+
+        </div>
+
+    </div>
+
+    <!-- RG -->
+
+    <div class="rg-line">
+
+        RG:
+        <span id="rg"></span>
+
+        DC:
+
+    </div>
+
+    <!-- TABELA -->
+
+    <div class="table-area">
+
+        NUM UF C.P.F&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DATA&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;S NOME&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DT.INGRES
+        <br>
+
+        SEQ
+        <br>
+
+        01 SP <span id="cpf"></span>
+        <span id="nasc"></span>
+        <span id="sexo"></span>
+        <span id="nome"></span>
+
+        <span style="margin-left:70px;" id="dtIngresso"></span>
+
+    </div>
+
+    <!-- SEQ -->
+
+    <div class="seq-input">
+
+        NUM. SEQ.:
+        <input type="text" id="campoSEQ">
+
+    </div>
+
+    <!-- TEXTO -->
+
+    <div class="footer-text">
+
+        TECLE ENTER PARA CONTINUAR, CLEAR PARA RETORNAR OU PF12 PARA TERMINAR
+
+    </div>
+
+    <!-- BOTÕES -->
+
+    <div class="buttons">
+
+        <button onclick="continuarSEQ()">
+    Continuar
+</button>
+
+        <button onclick="window.location.href='tela-inicial.html'">
+            Menu Principal
+        </button>
+
+        <button>
+            Retornar (Clear)
+        </button>
+
+        <button>
+            Voltar (F8)
+        </button>
+
+        <button onclick="window.location.href='index.html'">
+            Encerrar
+        </button>
+
+    </div>
+
+</div>
+
+<script>
+
+const dados = JSON.parse(localStorage.getItem("dadosServidor"));
+const rg = localStorage.getItem("rgSelecionado");
+
+document.getElementById("rg").innerText = rg;
+
+document.getElementById("cpf").innerText = dados.cpf;
+document.getElementById("nasc").innerText = dados.nasc;
+document.getElementById("sexo").innerText = dados.sexo;
+document.getElementById("nome").innerText = dados.nome;
+document.getElementById("dtIngresso").innerText = dados.dtIngresso;
+
+function continuarSEQ(){
+
+    let seq = document.getElementById("campoSEQ").value;
+
+    if(seq === "1" || seq === "01"){
+
+        window.location.href = "cadastro-final.html";
+
+    }else{
+
+        alert("SEQ inválida.");
+
+    }
+
+}
+
+document.getElementById("campoSEQ")
+.addEventListener("keypress", function(e){
+
+    if(e.key === "Enter"){
+
+        continuarSEQ();
+
+    }
+
+});
+
+document.getElementById("campoSEQ").focus();
+
+</script>
+
+</body>
+</html>

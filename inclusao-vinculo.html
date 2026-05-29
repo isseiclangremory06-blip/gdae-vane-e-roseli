@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Inclusão de Funcionário/Servidor</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Courier New, monospace;
+}
+
+body{
+    background:#efefef;
+    zoom:90%;
+}
+
+/* TOPO */
+
+.top-system{
+    width:100%;
+    background:#e5e5e5;
+    border-bottom:2px solid #bdbdbd;
+    padding:6px 0;
+}
+
+.top-container{
+    width:1100px;
+    margin:auto;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.top-links{
+    display:flex;
+    gap:20px;
+    font-size:12px;
+}
+
+.top-links a{
+    text-decoration:none;
+    color:#333;
+}
+
+.top-right{
+    display:flex;
+    align-items:center;
+    gap:5px;
+}
+
+.top-right select{
+    height:20px;
+}
+
+.top-right button{
+    height:20px;
+    padding:0 6px;
+}
+
+/* HEADER */
+
+.header{
+    width:1100px;
+    margin:15px auto 10px auto;
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+}
+
+.logo-text h3{
+    color:red;
+    font-size:14px;
+}
+
+.logo-text h1{
+    font-size:16px;
+    font-weight:bold;
+}
+
+.logo-right{
+    text-align:right;
+    font-size:8px;
+}
+
+/* LINHA */
+
+.black-line{
+    width:1100px;
+    height:3px;
+    background:black;
+    margin:auto;
+}
+
+/* CONTEÚDO */
+
+.screen{
+    width:1100px;
+    margin:auto;
+    min-height:520px;
+    position:relative;
+    padding-top:10px;
+}
+
+/* TOPO SISTEMA */
+
+.system-top{
+    display:flex;
+    justify-content:space-between;
+    padding:0 80px;
+    font-size:14px;
+}
+
+.system-top-left{
+    line-height:18px;
+}
+
+.system-top-center{
+    text-align:center;
+    line-height:18px;
+}
+
+.system-top-right{
+    text-align:right;
+    line-height:18px;
+}
+
+/* CAMPOS */
+
+.fields{
+    margin-top:30px;
+    padding-left:80px;
+    display:flex;
+    gap:120px;
+    font-size:16px;
+}
+
+.field{
+    display:flex;
+    gap:8px;
+    align-items:center;
+}
+
+.field input{
+    width:120px;
+    height:22px;
+    border:none;
+    background:transparent;
+    font-size:16px;
+    font-family:Courier New, monospace;
+    outline:none;
+}
+
+/* TEXTO RODAPÉ */
+
+.footer-text{
+    position:absolute;
+    bottom:120px;
+    width:100%;
+    text-align:center;
+    font-size:16px;
+}
+
+/* BOTÕES */
+
+.buttons{
+    position:absolute;
+    bottom:50px;
+    width:100%;
+    display:flex;
+    justify-content:center;
+    gap:60px;
+}
+
+.buttons button{
+    min-width:170px;
+    height:45px;
+    border:2px solid black;
+    background:#9db4e0;
+    font-size:18px;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+.buttons button:hover{
+    background:#7f9ad1;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- TOPO -->
+
+<div class="top-system">
+
+    <div class="top-container">
+
+        <div class="top-links">
+
+            <a href="#">Portal do Governo</a>
+            <a href="#">Cidadão.SP</a>
+            <a href="#">Investimentos.SP</a>
+
+        </div>
+
+        <div class="top-right">
+
+            <select>
+                <option>Destaques:</option>
+            </select>
+
+            <button>OK</button>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- HEADER -->
+
+<div class="header">
+
+    <div class="logo-text">
+
+        <h3>Governo do Estado de São Paulo</h3>
+        <h1>Secretaria da Educação</h1>
+
+    </div>
+
+    <div class="logo-right">
+
+        GOVERNO DO ESTADO DE SÃO PAULO
+        <br>
+        Secretaria da Educação
+
+    </div>
+
+</div>
+
+<!-- LINHA -->
+
+<div class="black-line"></div>
+
+<!-- TELA -->
+
+<div class="screen">
+
+    <!-- TOPO -->
+
+    <div class="system-top">
+
+        <div class="system-top-left">
+
+            MPAEF1A
+            <br>
+            01.1.1
+
+        </div>
+
+        <div class="system-top-center">
+
+            SECR EDUCACAO - CADASTRO FUNCIONAL
+            <br>
+            INCLUSAO DE FUNCIONARIO/SERVIDOR
+
+        </div>
+
+        <div class="system-top-right">
+
+            Tempo: 29:55 min
+            <br>
+            28/05/26
+            <br>
+            14:22:05
+
+        </div>
+
+    </div>
+
+    <!-- CAMPOS -->
+
+    <div class="fields">
+
+        <div class="field">
+
+            RG:
+
+            <input type="text" id="campoRG">
+
+        </div>
+
+        <div class="field">
+
+            DC:
+
+            <input type="text" style="width:60px;">
+
+        </div>
+
+        <div class="field">
+
+            UF:
+
+            <input type="text" style="width:60px;">
+
+        </div>
+
+    </div>
+
+    <!-- TEXTO -->
+
+    <div class="footer-text">
+
+        TECLE ENTER PARA CONTINUAR, CLEAR PARA RETORNAR OU PF12 PARA TERMINAR
+
+    </div>
+
+    <!-- BOTÕES -->
+
+    <div class="buttons">
+
+        <button onclick="validarRG()">
+    Continuar
+</button>
+
+        <button onclick="window.location.href='tela-inicial.html'">
+            Menu Principal
+        </button>
+
+        <button>
+            Retornar (Clear)
+        </button>
+
+        <button>
+            Voltar (F8)
+        </button>
+
+        <button onclick="window.location.href='index.html'">
+            Encerrar
+        </button>
+
+    </div>
+
+</div>
+
+<script>
+
+const servidores = {
+
+"123456789":{
+    nome:"CARLOS EDUARDO SILVA",
+    cpf:"12345678901",
+    nasc:"15/03/1988",
+    sexo:"M",
+    dtIngresso:"02/01/2024",
+    estadoCivil:"C",
+    naturalidade:"SP",
+    nacionalidade:"BRASILEIRA",
+    escolaridade:"3",
+    pis:"16590924111",
+    mae:"MARIA EDUARDA SILVA",
+    anoEmprego:"2018",
+
+    rgEmissao:"12/05/2018",
+    orgEmissor:"SSP",
+    raca:"B",
+    aldeado:"N",
+    municipioNasc:"CAMPINAS",
+    pai:"JOSE EDUARDO SILVA",
+    endereco:"RUA DAS FLORES",
+    numero:"145",
+    complemento:"CASA",
+    bairro:"CENTRO",
+    municipio:"CAMPINAS",
+    cep:"13010010",
+    uf:"SP",
+    telefone:"11999887766",
+    celular:"11997776655",
+    email:"carlos.silva@hotmail.com",
+    titulo:"445566778899",
+    zona:"101",
+    secao:"0201",
+    cartProf:"4455",
+    serieProf:"001",
+    ufProf:"SP"
+},
+
+"234567891":{
+    nome:"MARIA APARECIDA SOUZA",
+    cpf:"23456789100",
+    nasc:"22/07/1990",
+    sexo:"F",
+    dtIngresso:"11/02/2024",
+    estadoCivil:"S",
+    naturalidade:"MG",
+    nacionalidade:"BRASILEIRA",
+    escolaridade:"3",
+    pis:"16590924112",
+    mae:"JOANA APARECIDA SOUZA",
+    anoEmprego:"2016",
+
+    rgEmissao:"03/08/2019",
+    orgEmissor:"SSP",
+    raca:"B",
+    aldeado:"N",
+    municipioNasc:"UBERLANDIA",
+    pai:"PAULO SOUZA",
+    endereco:"AVENIDA BRASIL",
+    numero:"820",
+    complemento:"APTO 22",
+    bairro:"JARDIM AMERICA",
+    municipio:"SAO PAULO",
+    cep:"04567000",
+    uf:"SP",
+    telefone:"1133445566",
+    celular:"11998881122",
+    email:"maria.souza@gmail.com",
+    titulo:"112233445566",
+    zona:"202",
+    secao:"0302",
+    cartProf:"5522",
+    serieProf:"002",
+    ufProf:"SP"
+},
+
+"345678912":{
+    nome:"JOAO PEDRO FERREIRA",
+    cpf:"34567891255",
+    nasc:"09/12/1985",
+    sexo:"M",
+    dtIngresso:"18/03/2024",
+    estadoCivil:"C",
+    naturalidade:"RJ",
+    nacionalidade:"BRASILEIRA",
+    escolaridade:"2",
+    pis:"16590924113",
+    mae:"LUCIA FERREIRA",
+    anoEmprego:"2012",
+
+    rgEmissao:"14/02/2017",
+    orgEmissor:"SSP",
+    raca:"P",
+    aldeado:"N",
+    municipioNasc:"NITEROI",
+    pai:"MARCOS FERREIRA",
+    endereco:"RUA SANTA LUZIA",
+    numero:"58",
+    complemento:"CASA",
+    bairro:"VILA NOVA",
+    municipio:"OSASCO",
+    cep:"06018000",
+    uf:"SP",
+    telefone:"1144556677",
+    celular:"11996665544",
+    email:"joao.ferreira@yahoo.com",
+    titulo:"223344556677",
+    zona:"150",
+    secao:"0120",
+    cartProf:"6611",
+    serieProf:"003",
+    ufProf:"SP"
+},
+
+"456789123":{
+    nome:"FERNANDA LIMA COSTA",
+    cpf:"45678912344",
+    nasc:"01/05/1992",
+    sexo:"F",
+    dtIngresso:"27/01/2024",
+    estadoCivil:"S",
+    naturalidade:"SP",
+    nacionalidade:"BRASILEIRA",
+    escolaridade:"3",
+    pis:"16590924114",
+    mae:"ROSANA LIMA COSTA",
+    anoEmprego:"2019",
+
+    rgEmissao:"20/11/2020",
+    orgEmissor:"SSP",
+    raca:"B",
+    aldeado:"N",
+    municipioNasc:"SOROCABA",
+    pai:"ROBERTO COSTA",
+    endereco:"RUA JOSE BONIFACIO",
+    numero:"99",
+    complemento:"APTO 14",
+    bairro:"CENTRO",
+    municipio:"SOROCABA",
+    cep:"18035000",
+    uf:"SP",
+    telefone:"1533447788",
+    celular:"15998887766",
+    email:"fernanda.costa@gmail.com",
+    titulo:"334455667788",
+    zona:"099",
+    secao:"0111",
+    cartProf:"7788",
+    serieProf:"004",
+    ufProf:"SP"
+},
+
+"567891234":{
+    nome:"RAFAEL DOS SANTOS",
+    cpf:"56789123477",
+    nasc:"10/10/1980",
+    sexo:"M",
+    dtIngresso:"14/04/2024",
+    estadoCivil:"D",
+    naturalidade:"BA",
+    nacionalidade:"BRASILEIRA",
+    escolaridade:"2",
+    pis:"16590924115",
+    mae:"VERNATIA GOMES FERREIRA",
+    anoEmprego:"2021",
+
+    rgEmissao:"05/01/2016",
+    orgEmissor:"SSP",
+    raca:"P",
+    aldeado:"N",
+    municipioNasc:"SALVADOR",
+    pai:"ANTONIO DOS SANTOS",
+    endereco:"RUA DAS ACACIAS",
+    numero:"450",
+    complemento:"CASA",
+    bairro:"VILA MARIA",
+    municipio:"GUARULHOS",
+    cep:"07023000",
+    uf:"SP",
+    telefone:"1122554477",
+    celular:"11995554433",
+    email:"rafael.santos@hotmail.com",
+    titulo:"445577889900",
+    zona:"250",
+    secao:"0222",
+    cartProf:"8899",
+    serieProf:"005",
+    ufProf:"SP"
+},
+
+"678912345":{
+    nome:"PATRICIA ALMEIDA ROCHA",
+    cpf:"67891234566",
+    nasc:"14/08/1987",
+    sexo:"F",
+    dtIngresso:"09/05/2024",
+    estadoCivil:"C",
+    naturalidade:"PR",
+    nacionalidade:"BRASILEIRA",
+    escolaridade:"3",
+    pis:"16590924116",
+    mae:"HELENA ALMEIDA",
+    anoEmprego:"2014",
+
+    rgEmissao:"18/07/2015",
+    orgEmissor:"SSP",
+    raca:"B",
+    aldeado:"N",
+    municipioNasc:"CURITIBA",
+    pai:"JORGE ROCHA",
+    endereco:"AVENIDA PAULISTA",
+    numero:"1200",
+    complemento:"CJ 45",
+    bairro:"BELA VISTA",
+    municipio:"SAO PAULO",
+    cep:"01310000",
+    uf:"SP",
+    telefone:"1133224455",
+    celular:"11994443322",
+    email:"patricia.rocha@gmail.com",
+    titulo:"556677889911",
+    zona:"303",
+    secao:"0150",
+    cartProf:"9900",
+    serieProf:"006",
+    ufProf:"SP"
+}
+
+};
+
+function validarRG(){
+
+    let rg = document.getElementById("campoRG").value;
+
+    if(servidores[rg]){
+
+        localStorage.setItem(
+            "dadosServidor",
+            JSON.stringify(servidores[rg])
+        );
+
+        localStorage.setItem("rgSelecionado", rg);
+
+        window.location.href = "duplicidade.html";
+
+    }else{
+
+        alert("RG não localizado.");
+
+    }
+
+}
+
+document.getElementById("campoRG")
+.addEventListener("keypress", function(e){
+
+    if(e.key === "Enter"){
+
+        validarRG();
+
+    }
+
+});
+
+</script>
+
+</body>
+</html>

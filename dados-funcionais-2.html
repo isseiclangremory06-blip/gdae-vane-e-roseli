@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+
+<meta charset="UTF-8">
+<title>Dados Funcionais</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Courier New, monospace;
+}
+
+body{
+    background:#efefef;
+    zoom:90%;
+}
+
+.top-system{
+    width:100%;
+    background:#e5e5e5;
+    border-bottom:2px solid #bdbdbd;
+    padding:6px 0;
+}
+
+.top-container{
+    width:1100px;
+    margin:auto;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.top-links{
+    display:flex;
+    gap:20px;
+    font-size:12px;
+}
+
+.top-links a{
+    text-decoration:none;
+    color:#333;
+}
+
+.top-right{
+    display:flex;
+    align-items:center;
+    gap:5px;
+}
+
+.header{
+    width:1100px;
+    margin:15px auto 10px auto;
+    display:flex;
+    justify-content:space-between;
+}
+
+.logo-text h3{
+    color:red;
+    font-size:14px;
+}
+
+.logo-text h1{
+    font-size:16px;
+}
+
+.logo-right{
+    text-align:right;
+    font-size:8px;
+}
+
+.black-line{
+    width:1100px;
+    height:3px;
+    background:black;
+    margin:8px auto;
+}
+
+.screen{
+    width:1100px;
+    margin:auto;
+    min-height:650px;
+}
+
+.system-top{
+    display:flex;
+    justify-content:space-between;
+    padding:0 80px;
+    font-size:14px;
+    line-height:20px;
+    margin-top:-5px;
+}
+
+/* Terminal content area */
+.content{
+    margin-left:120px;
+    margin-top:18px;
+    font-size:16px;
+    line-height:28px;
+    white-space:nowrap;
+}
+
+/* Inline editable field — terminal style, sem caixa */
+.field{
+    display:inline-block;
+    border:none;
+    background:transparent;
+    font-family:Courier New, monospace;
+    font-size:16px;
+    outline:none;
+    vertical-align:middle;
+    min-width:10px;
+    white-space:nowrap;
+    overflow:hidden;
+}
+
+.field.pequeno  { width:55px;  }
+.field.medio    { width:115px; }
+.field.grande   { width:260px; }
+.field.data     { width:90px;  }
+.field.proc     { width:170px; }
+.field.banco    { width:45px;  }
+.field.agencia  { width:55px;  }
+.field.numero   { width:130px; }
+
+.footer-text{
+    margin-top:30px;
+    text-align:center;
+    font-size:16px;
+    line-height:26px;
+}
+
+#mensagemErro{
+    font-size:16px;
+    font-family:Courier New, monospace;
+    line-height:24px;
+    margin-bottom:4px;
+}
+
+.buttons{
+    margin-top:20px;
+    display:flex;
+    justify-content:center;
+    gap:60px;
+}
+
+.buttons button{
+    min-width:140px;
+    height:32px;
+    border:2px solid black;
+    background:#9db4e0;
+    font-size:14px;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="top-system">
+  <div class="top-container">
+    <div class="top-links">
+      <a href="#">Portal do Governo</a>
+      <a href="#">Cidadão.SP</a>
+      <a href="#">Investimentos.SP</a>
+    </div>
+    <div class="top-right">
+      <select><option>Destaques:</option></select>
+      <button>OK</button>
+    </div>
+  </div>
+</div>
+
+<div class="header">
+  <div class="logo-text">
+    <h3>Governo do Estado de São Paulo</h3>
+    <h1>Secretaria da Educação</h1>
+  </div>
+  <div class="logo-right">
+    GOVERNO DO ESTADO DE SÃO PAULO<br>
+    Secretaria da Educação
+  </div>
+</div>
+
+<div class="black-line"></div>
+
+<div class="screen">
+
+  <div style="text-align:right; margin-right:80px; font-size:14px;">
+    Tempo: 29:53 min
+  </div>
+
+  <div class="system-top">
+    <div>
+      MPAEF2A<br>
+      01.1.1
+    </div>
+    <div>
+      SECR EDUCACAO - CADASTRO FUNCIONAL<br>
+      INCLUSAO DE VINCULO - DADOS FUNCIONAIS
+    </div>
+    <div style="text-align:right;">
+      DATA 28/05/26<br>
+      HORA 14:30:38
+    </div>
+  </div>
+
+  <div class="content">
+
+    <!-- Linha 1: RG e Nome -->
+    RG: <span id="rg"></span>&nbsp; DC:&nbsp; 1 - SP <span id="nome"></span>
+
+    <br><br>
+
+    <!-- Linha 2: CARGO e SUBQ -->
+    CARGO: <span id="cargo"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SUBQ:
+
+    <br>
+
+    <!-- Linha 3: NATUREZA -->
+    NATUREZA/PROV/PREENCH: <span id="natureza"></span>&nbsp;&nbsp;&nbsp;(1=NOMEACAO,4=ADMISSAO,5=ACESSO,C=COMISSAO)
+
+    <br><br>
+
+    <!-- Linha 4: JORNADA e CLASSE -->
+    JORNADA:&nbsp;&nbsp;&nbsp;<span contenteditable="true" class="field pequeno"></span>&nbsp; (P,C,I) &nbsp;&nbsp;&nbsp;CLASSE/DISCIPLINA (PROF III):&nbsp;<span contenteditable="true" class="field medio"></span>
+
+    <br>
+
+ <!-- Linha 5: DATA PUBL, PROCESSO/PORTARIA -->
+DATA PUBL:&nbsp;
+<span id="dataPubl"
+contenteditable="true"
+class="field data obrigatorio"></span>
+
+&nbsp;&nbsp;PROCESSO/PORTARIA:&nbsp;
+
+<span contenteditable="true"
+class="field proc"></span>
+
+&nbsp;&nbsp;(NUM,ANO,ORGAO)
+
+<br>
+
+<!-- Linha 6 -->
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+OPÇÃO VENCIMENTO:&nbsp;
+
+<span contenteditable="true"
+class="field pequeno"></span>
+
+&nbsp;&nbsp;&nbsp;&nbsp;PV:&nbsp;
+
+<span contenteditable="true"
+class="field pequeno"></span>
+
+<br>
+
+<!-- Linha 7 -->
+UNIDADE ADMINISTRATIVA(COD/DENOM):&nbsp;
+
+<span id="unidadeAdm"
+contenteditable="true"
+class="field grande obrigatorio"></span>
+
+&nbsp;&nbsp;MUN.:&nbsp;
+
+<span contenteditable="true"
+class="field medio"></span>
+
+&nbsp;&nbsp;D.E.:&nbsp;
+
+<span contenteditable="true"
+class="field pequeno"></span>
+
+<br><br>
+
+<!-- Linha 8 -->
+ACUMUL:&nbsp;
+
+<span contenteditable="true"
+class="field pequeno"></span>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+TIPO:&nbsp;
+
+<span contenteditable="true"
+class="field pequeno"></span>
+
+&nbsp;&nbsp;&nbsp;&nbsp;
+CPAC:&nbsp;
+
+<span contenteditable="true"
+class="field pequeno"></span>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+PUBL.:&nbsp;
+
+<span contenteditable="true"
+class="field medio"></span>
+
+<br>
+
+<!-- Linha 9 -->
+DATA DE POSSE:&nbsp;&nbsp;
+
+<span id="dataPosse"
+contenteditable="true"
+class="field data obrigatorio"></span>
+
+&nbsp;&nbsp;DE EXERCICIO:&nbsp;
+
+<span id="dataExercicio"
+contenteditable="true"
+class="field data obrigatorio"></span>
+
+&nbsp;&nbsp;REG. DIPLOMA/MEC:&nbsp;
+
+<span contenteditable="true"
+class="field medio"></span>
+
+<br>
+
+<!-- Linha 10 -->
+CONTA BANCARIA- BANCO&nbsp;
+
+<span id="banco"
+contenteditable="true"
+class="field banco obrigatorio"></span>
+
+&nbsp;&nbsp;&nbsp;AGENCIA:&nbsp;
+
+<span id="agencia"
+contenteditable="true"
+class="field agencia obrigatorio"></span>
+
+&nbsp;&nbsp;&nbsp;TIPO:&nbsp;
+
+<span contenteditable="true"
+class="field pequeno"></span>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;NUMERO:&nbsp;
+
+<span contenteditable="true"
+class="field numero"></span>
+
+  </div>
+
+  <div class="footer-text">
+    <div id="mensagemErro"></div>
+    TECLE ENTER PARA CONTINUAR, CLEAR PARA RETORNAR OU PF12 PARA TERMINAR
+  </div>
+
+  <div class="buttons">
+    <button onclick="validarFormulario()">Continuar</button>
+    <button onclick="window.location.href='tela-inicial.html'">Menu Principal</button>
+    <button>Retornar (Clear)</button>
+    <button onclick="window.location.href='cargo.html'">Voltar (F8)</button>
+    <button onclick="window.location.href='index.html'">Encerrar</button>
+  </div>
+
+</div>
+
+<script>
+
+// Tenta carregar dados do localStorage, usa fallback se não existir
+const dados = JSON.parse(localStorage.getItem("dadosServidor") || '{"nome":"JENNIFER MIRIAM MORAIS GONCALVES"}');
+const rg = localStorage.getItem("rgSelecionado") || "000049155610";
+
+document.getElementById("rg").innerText = rg;
+document.getElementById("nome").innerText = dados.nome;
+document.getElementById("cargo").innerText = localStorage.getItem("cargo") || "5857";
+document.getElementById("natureza").innerText = localStorage.getItem("natureza") || "C";
+
+
+// SOMENTE NUMEROS
+function somenteNumeros(campo, limite = null){
+
+    campo.addEventListener("input", function(){
+
+        this.innerText =
+        this.innerText.replace(/\D/g, "");
+
+        if(limite){
+            this.innerText =
+            this.innerText.substring(0, limite);
+        }
+
+        moverCursorFinal(this);
+
+    });
+
+}
+
+// DATA AUTOMATICA DD/MM/AAAA
+function mascaraData(campo){
+
+    campo.addEventListener("input", function(){
+
+        let valor =
+        this.innerText.replace(/\D/g, "");
+
+        if(valor.length > 8){
+            valor = valor.substring(0,8);
+        }
+
+        if(valor.length >= 5){
+
+            valor =
+            valor.substring(0,2) + "/" +
+            valor.substring(2,4) + "/" +
+            valor.substring(4);
+
+        }else if(valor.length >= 3){
+
+            valor =
+            valor.substring(0,2) + "/" +
+            valor.substring(2);
+
+        }
+
+        this.innerText = valor;
+
+        moverCursorFinal(this);
+
+    });
+
+}
+
+// MANTER CURSOR NO FINAL
+function moverCursorFinal(elemento){
+
+    const range =
+    document.createRange();
+
+    const sel =
+    window.getSelection();
+
+    range.selectNodeContents(elemento);
+    range.collapse(false);
+
+    sel.removeAllRanges();
+    sel.addRange(range);
+
+}
+
+function validarFormulario(){
+
+    const obrigatorios =
+    document.querySelectorAll(".obrigatorio");
+
+    let possuiErro = false;
+
+    obrigatorios.forEach(function(campo){
+
+        const val =
+        campo.innerText.trim().replace(/\*/g, "");
+
+        if(val === ""){
+
+            possuiErro = true;
+
+            campo.innerText = "****";
+
+        }
+
+    });
+
+    const rodape =
+    document.getElementById("mensagemErro");
+
+    // CAMPOS OBRIGATORIOS
+    if(possuiErro){
+
+        rodape.style.color = "red";
+
+rodape.innerText =
+"PAE001 - CAMPO(S) OBRIGATORIO(S) NAO PREENCHIDO(S)";
+
+        return;
+
+    }
+
+    // VALIDA DATA
+    const datas = [
+
+        document.getElementById("dataPubl").innerText,
+        document.getElementById("dataPosse").innerText,
+        document.getElementById("dataExercicio").innerText
+
+    ];
+
+    const regexData =
+    /^\d{2}\/\d{2}\/\d{4}$/;
+
+    for(let data of datas){
+
+        if(!regexData.test(data)){
+
+            rodape.style.color = "red";
+
+rodape.innerText =
+"DATA INVALIDA";
+
+            return;
+
+        }
+
+    }
+
+    rodape.innerText =
+"OPERACAO EFETUADA COM SUCESSO";
+
+rodape.style.color = "green";
+
+}
+
+// CAMPOS NUMERICOS
+
+somenteNumeros(
+document.querySelector("#unidadeAdm"), 5
+);
+
+somenteNumeros(
+document.querySelector("#banco"), 4
+);
+
+somenteNumeros(
+document.querySelector("#agencia"), 4
+);
+
+// DATAS
+
+mascaraData(
+document.querySelector("#dataPubl")
+);
+
+mascaraData(
+document.querySelector("#dataPosse")
+);
+
+mascaraData(
+document.querySelector("#dataExercicio")
+);
+
+document.addEventListener("keydown", function(e){
+
+    if(e.key === "Enter"){
+
+        validarFormulario();
+
+    }
+
+});
+
+</script>
+
+</body>
+</html>

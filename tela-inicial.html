@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Cadastro Funcional</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+    background:#efefef;
+}
+
+.top-system{
+    width:100%;
+    background:#e5e5e5;
+    border-bottom:2px solid #bdbdbd;
+    padding:8px 0;
+}
+
+.top-container{
+    width:1100px;
+    margin:auto;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.top-links{
+    display:flex;
+    gap:25px;
+}
+
+.top-links a{
+    text-decoration:none;
+    color:#333;
+    font-size:13px;
+}
+
+.top-right{
+    display:flex;
+    gap:5px;
+    align-items:center;
+}
+
+.top-right select{ padding:2px; }
+.top-right button{ padding:2px 8px; }
+
+.header{
+    width:1100px;
+    margin:20px auto;
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+}
+
+.logo-text h3{ color:red; font-size:18px; }
+.logo-text h1{ font-size:38px; font-weight:bold; }
+.logo-right{ text-align:right; font-size:12px; }
+
+.black-line{
+    width:1100px;
+    height:4px;
+    background:black;
+    margin:0 auto;
+}
+
+.panel{
+    width:1100px;
+    margin:auto;
+    background:white;
+    min-height:700px;
+}
+
+.panel-top{
+    display:flex;
+    justify-content:space-between;
+    padding:8px 10px;
+    font-weight:bold;
+    font-size:14px;
+}
+
+.panel-top .center{ font-size:20px; }
+
+.content{ display:flex; }
+
+.menu{
+    width:520px;
+    position:relative;
+}
+
+.menu-title{
+    background:#90a6d6;
+    border:1px solid #4d4d4d;
+    font-weight:bold;
+    padding:4px 10px;
+}
+
+.menu-item{
+    background:#9fb2dc;
+    border-bottom:1px solid white;
+    padding:7px 8px;
+    font-weight:bold;
+    font-size:15px;
+    cursor:pointer;
+}
+
+.menu-item:hover{ background:#7e98d1; }
+
+.submenu{
+    display:none;
+    position:relative;
+}
+
+.submenu-item{
+    background:#d8d9ea;
+    border-bottom:1px solid white;
+    padding:6px 12px;
+    font-size:14px;
+    cursor:pointer;
+    position:relative;
+}
+
+.submenu-item::after{
+    content:">";
+    position:absolute;
+    right:10px;
+    color:white;
+    font-weight:bold;
+}
+
+.submenu-item:hover{ background:#c2c5e2; }
+
+.submenu2{
+    display:none;
+    position:absolute;
+    left:100%;
+    top:0;
+    width:520px;
+    z-index:999;
+}
+
+.submenu2-item{
+    background:#e4e4f1;
+    border-bottom:1px solid white;
+    font-size:14px;
+}
+
+.submenu-link{
+    display:block;
+    width:100%;
+    padding:6px 12px;
+    text-decoration:none;
+    color:black;
+}
+
+.submenu-link:hover{ background:#c2c5e2; }
+
+/* LADO DIREITO */
+.right-side{
+    flex:1;
+    position:relative;
+}
+
+/* ✅ NOVO: painel direito para sub-itens de "1 - Inclusão de Vínculo" */
+.right-submenu{
+    display:none;
+}
+
+.right-submenu-item{
+    background:#e4e4f1;
+    border-bottom:1px solid white;
+    padding:6px 12px;
+    font-size:14px;
+    cursor:pointer;
+}
+
+.right-submenu-item:hover{ background:#c2c5e2; }
+
+.aviso-rodape{
+    position:absolute;
+    bottom:80px;
+    right:20px;
+    width:360px;
+    background:#111;
+    border:3px solid #ffd400;
+    border-radius:12px;
+    padding:18px;
+    box-shadow:0 0 12px rgba(255,212,0,0.3);
+}
+
+.aviso-rodape h3{ color:#ffd400; font-size:18px; margin-bottom:10px; }
+.aviso-rodape p{ color:white; line-height:26px; font-size:16px; }
+.aviso-rodape span{ color:#ffd400; font-weight:bold; font-size:18px; }
+
+.footer-actions{
+    position:absolute;
+    bottom:20px;
+    right:20px;
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+.footer-actions input{
+    width:80px;
+    height:24px;
+    border:2px solid #333;
+}
+
+.footer-actions button{
+    padding:6px 15px;
+    background:#9fb2dc;
+    border:2px solid #333;
+    cursor:pointer;
+    font-weight:bold;
+}
+
+.footer-actions button:hover{ background:#7e98d1; }
+
+@media(max-width:1150px){
+    .top-container, .header, .panel, .black-line{ width:95%; }
+    .content{ flex-direction:column; }
+    .menu{ width:100%; }
+    .submenu2{ position:relative; left:0; width:100%; }
+}
+
+</style>
+
+</head>
+<body>
+
+<!-- TOPO -->
+<div class="top-system">
+    <div class="top-container">
+        <div class="top-links">
+            <a href="#">Portal do Governo</a>
+            <a href="#">Cidadão.SP</a>
+            <a href="#">Investimentos.SP</a>
+        </div>
+        <div class="top-right">
+            <select><option>Destaques:</option></select>
+            <button>OK</button>
+        </div>
+    </div>
+</div>
+
+<!-- HEADER -->
+<div class="header">
+    <div class="logo-text">
+        <h3>Governo do Estado de São Paulo</h3>
+        <h1>Secretaria da Educação</h1>
+    </div>
+    <div class="logo-right">
+        GOVERNO DO ESTADO DE SÃO PAULO<br>Secretaria da Educação
+    </div>
+</div>
+
+<!-- LINHA -->
+<div class="black-line"></div>
+
+<!-- PAINEL -->
+<div class="panel">
+
+    <div class="panel-top">
+        <div>Menu Principal</div>
+        <div class="center">Cadastro Funcional</div>
+        <div id="timer">Tempo: 29:53 min</div>
+    </div>
+
+    <div class="content">
+
+        <!-- MENU -->
+        <div class="menu">
+
+            <div class="menu-title">Menu Principal</div>
+
+            <!-- ✅ ALTERAÇÃO 1: item 01 agora tem onclick -->
+            <div class="menu-item" onclick="toggleMenu01()">
+                01 - Inclusão / Exclusão / Retificação de Título / Portaria
+            </div>
+
+            <!-- ✅ ALTERAÇÃO 2: submenu do item 01 com 8 itens -->
+            <div class="submenu" id="submenu01">
+
+                <!-- ✅ ALTERAÇÃO 3: clique em "1 - Inclusão de Vínculo" abre painel direito -->
+                <div class="submenu-item" onclick="toggleInclusaoVinculo()">
+                    1 - Inclusão de Vínculo
+                </div>
+
+                <div class="submenu-item">2 - Exclusão de Vínculo / Designação</div>
+                <div class="submenu-item">3 - Retificação de Dados do TIT / Portaria</div>
+                <div class="submenu-item">4 - Designação</div>
+                <div class="submenu-item">5 - Inclusão de Func / Serv de outra Secretaria</div>
+                <div class="submenu-item">6 - Admissão de QAE por Período Determinado</div>
+                <div class="submenu-item">7 - Exclusão de Dados Pessoais</div>
+                <div class="submenu-item">8 - Retificação de Publicação</div>
+
+            </div>
+
+            <div class="menu-item">02 - Cessação de Exercício</div>
+            <div class="menu-item">03 - Afastamentos / Licenças / Penalidades</div>
+
+            <div class="menu-item" onclick="toggleMenu()">
+                04 - Atualização de UA / Adido / Readap. / Estável / Cta Bancária
+            </div>
+
+            <div class="submenu" id="submenu">
+                <div class="submenu-item" onclick="toggleSubmenu2()">
+                    1 - Alteração da Unidade de Classificação
+                </div>
+                <div class="submenu2" id="submenu2">
+                    <div class="submenu2-item"><a href="mudanca.html" class="submenu-link">1 - Mudança de Sede de Controle de Frequência</a></div>
+                    <div class="submenu2-item"><a href="#" class="submenu-link">2 - Transferência</a></div>
+                    <div class="submenu2-item"><a href="#" class="submenu-link">3 - Remoção por Permuta</a></div>
+                    <div class="submenu2-item"><a href="#" class="submenu-link">4 - Remoção por Títulos</a></div>
+                    <div class="submenu2-item"><a href="#" class="submenu-link">5 - Remoção por União de Cônjuge</a></div>
+                    <div class="submenu2-item"><a href="#" class="submenu-link">6 - Remoção Ex-Ofício</a></div>
+                    <div class="submenu2-item"><a href="exclusao-rt.html" class="submenu-link">7 - Exclusão</a></div>
+                    <div class="submenu2-item"><a href="#" class="submenu-link">8 - Acerto de Unidade de Classificação / Jornada</a></div>
+                </div>
+                <div class="submenu-item">2 - Transferência para outra Pasta</div>
+                <div class="submenu-item">3 - Situação Especial - Adido</div>
+                <div class="submenu-item">4 - Situação Especial - Readaptado</div>
+                <div class="submenu-item">5 - Alteração do Vínculo Funcional - Estável</div>
+                <div class="submenu-item">6 - Alteração da Conta Bancária</div>
+                <div class="submenu-item">7 - Alteração da Unidade de Classificação - Exclusiva DRHU</div>
+                <div class="submenu-item">8 - Exclusão de Histórico - Cargo / Função</div>
+            </div>
+
+            <div class="menu-item">05 - Atualização de Dados Pessoais / Impedir Acesso ao Sistema</div>
+            <div class="menu-item">06 - Atualização de Vantagens / Enquadramento</div>
+
+            <div class="menu-item" onclick="toggleConsultas()">07 - Consultas</div>
+
+            <div class="submenu" id="submenuConsultas">
+                <div class="submenu-item">1 - Nomes Semelhantes</div>
+                <div class="submenu-item">2 - Dados Pessoais</div>
+                <div class="submenu-item">3 - Laudas Automáticas</div>
+                <div class="submenu-item">4 - Contingente da UA</div>
+                <div class="submenu-item" onclick="window.location.href='geralrg.html'">5 - Geral por RG</div>
+                <div class="submenu-item">6 - Afastamentos</div>
+                <div class="submenu-item">7 - Projeto de Recuperação e Avaliação nas Férias</div>
+                <div class="submenu-item">8 - Processamentos Rejeitados</div>
+            </div>
+
+            <div class="menu-item">08 - Quadro Curricular</div>
+            <div class="menu-item">09 - Carga Horária de Docentes</div>
+            <div class="menu-item">10 - Grade de Substituição</div>
+            <div class="menu-item">11 - Integração Educação / Fazenda</div>
+            <div class="menu-item">12 - Tabela de Locais</div>
+            <div class="menu-item">13 - Evolução Funcional - Não Acadêmica</div>
+            <div class="menu-item">14 - Escolaridade</div>
+            <div class="menu-item">15 - Alocação</div>
+
+        </div>
+
+        <!-- DIREITA -->
+        <div class="right-side">
+
+            <!-- ✅ ALTERAÇÃO 4: painel direito com sub-itens de Inclusão de Vínculo -->
+            <div class="right-submenu" id="rightSubmenuInclusao">
+                <div class="right-submenu-item"
+     onclick="window.location.href='inclusao-vinculo.html'">
+     1 - Inclusão de Vínculo
+</div>
+                <div class="right-submenu-item">2 - Inclusão de Vínculo - Docente (ACT)</div>
+                <div class="right-submenu-item">3 - Inclusão de Vínculo - Docente (Efetivo)</div>
+                <div class="right-submenu-item">4 - Inclusão de Vínculo - Classe de Suporte Pedagógico</div>
+                <div class="right-submenu-item">5 - Inclusão de Vínculo - QAE</div>
+                <div class="right-submenu-item">6 - Inclusão de Vínculo - Docente Efetivo - Ação Judicial</div>
+                <div class="right-submenu-item">7 - Inclusão de Vínculo (Temporário)</div>
+            </div>
+
+            <div class="aviso-rodape">
+                <h3>AMBIENTE DE TESTE PARA OT</h3>
+                <p>Válido apenas entre os dias<br><span>08/06/2026 a 12/06/2026</span></p>
+            </div>
+
+            <div class="footer-actions">
+                <span>Opção:</span>
+                <input type="text">
+                <button>Continuar</button>
+                <button onclick="window.location.href='index.html'">Encerrar</button>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script>
+
+// ✅ FUNÇÃO NOVA: abre/fecha submenu do item 01
+function toggleMenu01(){
+    let sub = document.getElementById("submenu01");
+    let aberto = sub.style.display === "block";
+    sub.style.display = aberto ? "none" : "block";
+    // Se fechar o menu 01, esconde também o painel direito
+    if(aberto){
+        document.getElementById("rightSubmenuInclusao").style.display = "none";
+    }
+}
+
+// ✅ FUNÇÃO NOVA: abre/fecha painel direito ao clicar em "1 - Inclusão de Vínculo"
+function toggleInclusaoVinculo(){
+    let painel = document.getElementById("rightSubmenuInclusao");
+    painel.style.display = painel.style.display === "block" ? "none" : "block";
+}
+
+// Funções já existentes (sem alteração)
+function toggleMenu(){
+    let submenu = document.getElementById("submenu");
+    submenu.style.display = submenu.style.display === "block" ? "none" : "block";
+}
+
+function toggleSubmenu2(){
+    let submenu2 = document.getElementById("submenu2");
+    submenu2.style.display = submenu2.style.display === "block" ? "none" : "block";
+}
+
+function toggleConsultas(){
+    let submenu = document.getElementById("submenuConsultas");
+    submenu.style.display = submenu.style.display === "block" ? "none" : "block";
+}
+
+// Timer regressivo
+let totalSeconds = 29 * 60 + 53;
+setInterval(function(){
+    if(totalSeconds > 0) totalSeconds--;
+    let m = Math.floor(totalSeconds / 60);
+    let s = totalSeconds % 60;
+    document.getElementById("timer").textContent =
+        "Tempo: " + String(m).padStart(2,"0") + ":" + String(s).padStart(2,"0") + " min";
+}, 1000);
+
+</script>
+
+</body>
+</html>

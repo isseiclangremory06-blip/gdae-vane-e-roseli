@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+
+<meta charset="UTF-8">
+<title>Dados Complementares</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Courier New, monospace;
+}
+
+body{
+    background:#efefef;
+    zoom:90%;
+}
+
+.top-system{
+    width:100%;
+    background:#e5e5e5;
+    border-bottom:2px solid #bdbdbd;
+    padding:6px 0;
+}
+
+.top-container{
+    width:1100px;
+    margin:auto;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.top-links{
+    display:flex;
+    gap:20px;
+    font-size:12px;
+}
+
+.top-links a{
+    text-decoration:none;
+    color:#333;
+}
+
+.top-right{
+    display:flex;
+    align-items:center;
+    gap:5px;
+}
+
+.header{
+    width:1100px;
+    margin:15px auto 10px auto;
+    display:flex;
+    justify-content:space-between;
+}
+
+.logo-text h3{
+    color:red;
+    font-size:14px;
+}
+
+.logo-text h1{
+    font-size:16px;
+}
+
+.logo-right{
+    text-align:right;
+    font-size:8px;
+}
+
+.black-line{
+    width:1100px;
+    height:3px;
+    background:black;
+    margin:20px auto;
+}
+
+.screen{
+    width:1100px;
+    margin:auto;
+    min-height:700px;
+    padding-top:5px;
+}
+
+.system-top{
+    display:flex;
+    justify-content:space-between;
+    padding:0 80px;
+    font-size:14px;
+    line-height:20px;
+    margin-top:-10px;
+}
+
+.dados{
+    margin-top:10px;
+    margin-left:140px;
+}
+
+.dados pre{
+    white-space:pre;
+    line-height:1.15;
+    font-size:16px;
+}
+
+.footer-text{
+    margin-top:25px;
+    text-align:center;
+    font-size:16px;
+}
+
+.buttons{
+    margin-top:18px;
+    display:flex;
+    justify-content:center;
+    gap:60px;
+}
+
+.buttons button{
+    min-width:110px;
+    height:32px;
+    border:2px solid black;
+    background:#9db4e0;
+    font-size:14px;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+</style>
+
+</head>
+
+<body>
+
+    <div class="top-system">
+
+    <div class="top-container">
+
+        <div class="top-links">
+            <a href="#">Portal do Governo</a>
+            <a href="#">Cidadão.SP</a>
+            <a href="#">Investimentos.SP</a>
+        </div>
+
+        <div class="top-right">
+            <select>
+                <option>Destaques:</option>
+            </select>
+
+            <button>OK</button>
+        </div>
+
+    </div>
+
+</div>
+
+<div class="header">
+
+    <div class="logo-text">
+        <h3>Governo do Estado de São Paulo</h3>
+        <h1>Secretaria da Educação</h1>
+    </div>
+
+    <div class="logo-right">
+        GOVERNO DO ESTADO DE SÃO PAULO
+        <br>
+        Secretaria da Educação
+    </div>
+
+</div>
+
+<div class="black-line"></div>
+
+<div class="screen">
+
+    <div style="text-align:right; margin-top:5px; font-size:14px;">
+
+</div>
+
+<div class="system-top">
+
+<div>
+MPAEF0A
+<br>
+01.1.1
+</div>
+
+<div>
+SECR EDUCACAO - CADASTRO FUNCIONAL
+<br>
+INCLUSAO DE FUNCIONARIO/SERVIDOR - DADOS PESSOAIS
+</div>
+
+<div style="text-align:right;">
+DATA 28/05/26
+<br>
+HORA 14:23:47
+</div>
+
+</div>
+
+<div class="dados">
+
+<pre>
+RG: <span id="rg"></span>  ORG.EMIS. SSP (SSP,SIA,SIE,SIM,DPF,PCE,STJ,SDS,DIC)
+DATA EMISSAO: 04 08 2022
+RACA: N (A,B,I,P,N)   ALDEADO (S/N):      MUNICIPIO DE NASC.: <span id="naturalidade"></span>
+
+NOME DO PAI: <span id="pai"></span>
+ENDERECO : <span id="endereco"></span>      NRO: <span id="numero"></span> COMPL: <span id="complemento"></span>
+BAIRRO   : <span id="bairro"></span>   MUNIC.: <span id="municipio"></span>
+CEP.     : <span id="cep"></span>        UF: <span id="uf"></span>
+TELEF.(DDD-NRO): 0000         CELULAR (DDD-NRO): <span id="celular"></span>
+E-MAIL   : <span id="email"></span>
+E-MAIL CORPORATIVO:
+NUM.TIT.ELEIT: <span id="titulo"></span> DIG.: 16 ZONA: <span id="zona"></span> SEC: <span id="secao"></span> DT.EMISS: 09 11 2017
+NUM.CARTEIRA PROFISSIONAL: 3446 NUM.SERIE: 861  UF: SP
+NUM.IDENT.SERV.MEDICO(N):
+DEP. IR:           DEP.SAL.FAMILIA:
+DEFICIENTE (S/N): N   TIPO:   (F=FISICA,A=AUDIT.,V=VISUAL,I=INTEL.,T=TEA)
+NECESSITA LOCAL DE FACIL ACESSO (S/N) ? :
+LEDOR (S/N) :   FONTE AMPLIADA (S/N):      TAMANHO(18,24 OU 28):
+</pre>
+
+</div>
+
+<div class="footer-text">
+
+TECLE ENTER PARA CONTINUAR, CLEAR PARA RETORNAR OU PF12 PARA TERMINAR
+
+</div>
+
+<div class="buttons">
+
+<button onclick="window.location.href='cargo.html'">
+    Continuar
+</button>
+
+<button onclick="window.location.href='tela-inicial.html'">
+Menu Principal
+</button>
+
+<button>
+Retornar (Clear)
+</button>
+
+<button onclick="window.location.href='cadastro-final.html'">
+Voltar (F8)
+</button>
+
+<button onclick="window.location.href='index.html'">
+Encerrar
+</button>
+
+</div>
+
+</div>
+
+<script>
+
+const dados = JSON.parse(localStorage.getItem("dadosServidor"));
+const rg = localStorage.getItem("rgSelecionado");
+
+document.getElementById("rg").innerText = rg;
+
+document.getElementById("email").innerText =
+dados.nome.toLowerCase().replaceAll(" ",".") + "@hotmail.com";
+
+document.getElementById("pai").innerText = dados.pai;
+document.getElementById("endereco").innerText = dados.endereco;
+document.getElementById("numero").innerText = dados.numero;
+document.getElementById("complemento").innerText = dados.complemento;
+document.getElementById("bairro").innerText = dados.bairro;
+document.getElementById("municipio").innerText = dados.municipio;
+document.getElementById("cep").innerText = dados.cep;
+document.getElementById("uf").innerText = dados.uf;
+document.getElementById("celular").innerText = dados.celular;
+document.getElementById("email").innerText = dados.email;
+document.getElementById("titulo").innerText = dados.titulo;
+document.getElementById("zona").innerText = dados.zona;
+document.getElementById("secao").innerText = dados.secao;
+document.getElementById("naturalidade").innerText = dados.naturalidade;
+
+</script>
+
+</body>
+</html>
